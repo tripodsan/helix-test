@@ -1,8 +1,8 @@
 # defines the default content repository
-content: https://github.com/adobe/project-helix.io.git
+content: https://github.com/koraa/helix-test.git
 
 # defines the default code (and static) repository
-code: https://github.com/adobe/project-helix.io.git
+code: https://github.com/koraa/helix-test.git
 
 # defines the default static root relative to the code repository
 staticRoot: /dist/
