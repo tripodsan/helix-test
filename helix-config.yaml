@@ -1,8 +1,8 @@
 # defines the default content repository
-content: https://github.com/koraa/helix-test.git
+content: https://github.com/koraa/helix-test.git#master
 
 # defines the default code (and static) repository
-code: https://github.com/koraa/helix-test.git
+code: https://github.com/koraa/helix-test.git#master
 
 # defines the default static root relative to the code repository
 staticRoot: /index.html
@@ -13,6 +13,5 @@ directoryIndex: index.html
 strains:
   default:
     code: /varner/git-github-com-koraa-helix-test-git--dirty--html
-    content: https://github.com/koraa/helix-test.git
-    static: https://github.com/koraa/helix-test.git
-
+    content: https://github.com/koraa/helix-test.git#master
+    static: https://github.com/koraa/helix-test.git#master
