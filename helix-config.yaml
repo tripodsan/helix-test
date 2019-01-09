@@ -12,6 +12,6 @@ directoryIndex: index.html
 
 strains:
   default:
-    code: /varner/git-github-com-koraa-helix-test-git--dirty--
+    code: /varner/git-github-com-koraa-helix-test-git--master--
     content: https://github.com/koraa/helix-test.git#master
     static: https://github.com/koraa/helix-test.git#master
