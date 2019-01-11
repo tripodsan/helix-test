@@ -1,4 +1,3 @@
-# You are my sunshine?
 
 Foo
 ===
