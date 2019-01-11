@@ -1,7 +1,4 @@
 
-Foo
-===
-
 \## Help
 
 Fmord.
