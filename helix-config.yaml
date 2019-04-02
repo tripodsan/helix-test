@@ -1,6 +1,7 @@
 version: 1
 strains:
   default:
-    code: "https://github.com/koraa/helix-test"
-    content: "https://github.com/koraa/helix-test"
-    static: "https://github.com/koraa/helix-test"
+    name: bd480003-c813-4276-ae91-ad414d365bc7
+    code: "https://github.com/koraa/helix-test.git#master"
+    content: "https://github.com/koraa/helix-test.git"
+    static: "https://github.com/koraa/helix-test/htdocs"
