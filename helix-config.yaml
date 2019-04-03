@@ -3,4 +3,5 @@ strains:
   - name: default
     code: "https://github.com/koraa/helix-test.git#master"
     content: "https://github.com/koraa/helix-test.git"
-    static: "https://github.com/koraa/helix-test/htdocs"
+    static: https://github.com/koraa/helix-test.git/htdocs
+    package: varner/3fdea499cb189c4ee03e4bc0c63ae945ac145e68
