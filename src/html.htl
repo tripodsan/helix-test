@@ -25,7 +25,7 @@
 </head>
 <body>
 
-${content.html}
+${content.document.body.innerHTML}
 
 <hr>
 <em>generated at ${content.time}</em>
