@@ -4,4 +4,4 @@ strains:
     code: "https://github.com/koraa/helix-test.git#master"
     content: "https://github.com/koraa/helix-test.git"
     static: https://github.com/koraa/helix-test.git/htdocs
-    package: varner/96e64dd10e2c459611a1d05231818a403053ec55
+    package: varner/24454d3d3f96e8dbde6a45587ef89bf6f554c9f3
