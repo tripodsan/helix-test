@@ -1,42 +1,6 @@
 version: 1
 strains:
-  - code:
-      protocol: https
-      host: github.com
-      port: ""
-      hostname: github.com
-      owner: koraa
-      repo: helix-test
-      ref: master
-      path: ""
-    content:
-      protocol: https
-      host: github.com
-      port: ""
-      hostname: github.com
-      owner: koraa
-      repo: helix-test
-      ref: ""
-      path: ""
-    static:
-      magic: false
-      allow: []
-      deny: []
-      protocol: https
-      host: github.com
-      port: ""
-      hostname: github.com
-      owner: koraa
-      repo: helix-test
-      ref: ""
-      path: /htdocs
-    directoryIndex: index.html
-    package: varner/1b7499150a57ee092620ea7fc384056a18ae1fa4
-    name: default
-    sticky: false
-    condition: ""
-    perf:
-      device: ""
-      location: ""
-      connection: ""
-    urls: []
+  - name: default
+    code: "https://github.com/koraa/helix-test.git#master"
+    content: "https://github.com/koraa/helix-test.git"
+    static: "https://github.com/koraa/helix-test/htdocs"
