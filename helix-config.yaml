@@ -1,7 +1,0 @@
-version: 1
-strains:
-  - name: default
-    code: "https://github.com/koraa/helix-test.git#master"
-    content: "https://github.com/koraa/helix-test.git"
-    static: https://github.com/koraa/helix-test.git/htdocs
-    package: varner/24454d3d3f96e8dbde6a45587ef89bf6f554c9f3
