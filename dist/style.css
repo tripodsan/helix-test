@@ -34,6 +34,7 @@ div.section:first-child p+h1 {
     line-height: 1.15;
     font-family: "museo-slab",serif;
     text-shadow: 0px 0px 6px #000000;
+    max-width: 100%;
 }
 
 div.section:first-child p {
@@ -46,6 +47,7 @@ div.section:first-child p+h1+p {
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 1.1em;
+    max-width: 100%;
 }
 
 div.section:first-child img {
@@ -83,14 +85,16 @@ h4 {
 blockquote {
     font-family: museo-slab,serif;
     font-weight: 700;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    padding-left: 4rem;
+    font-size: 1.0rem;
+    line-height: 1.4;
+    padding-left: 3rem;
+    padding-right: 0rem;
     padding-top: 2rem;
-    margin-left: -4rem;
+    margin-left: -3rem;
     margin-top: -2rem;
-
+    margin-right: 0;
     text-transform: uppercase;
+
     background-repeat: no-repeat;
     background-image: 
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><text font-size='250' x='0' y='200' letter-spacing='-35px' fill='lightgrey'>\2018\2018</text></svg>");
@@ -118,5 +122,9 @@ blockquote {
     body {
         font-size: 1.25rem;
     }
-    
+
+    blockquote {
+        font-size: 1.2rem;
+        line-height: 1.7;    
+    }
 }
