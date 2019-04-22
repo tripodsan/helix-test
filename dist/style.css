@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 body {
-    padding: 1rem;
-    margin: 1rem;
+    padding: 0;
+    margin: 0;
     background-color: white;
     font-family: "source-sans-pro", sans-serif;
     font-size: 1rem;
@@ -19,30 +19,36 @@ body {
     line-height: 1.5;
 }
 
-div.section:first-child {
-    margin-top: -3rem;
-    padding-top: 0;
-    margin-bottom: 40vh;
+.title {
+    overflow: hidden;
 }
 
-div.section:first-child p+h1 {
-    margin-top: -63vh;
-    text-align: center;
+.title p:first-child {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.title h1 {
+    position: absolute;
+    top: 30vh;
+    width: 100%;
+    display: block;
     color: white;
+    text-align: center;
     font-weight: 700;
     font-size: 2.6rem;
     line-height: 1.15;
     font-family: "museo-slab",serif;
     text-shadow: 0px 0px 6px #000000;
-    max-width: 100%;
 }
 
-div.section:first-child p {
-    font-size: 1rem;
-    line-height: 1rem;
-}
-div.section:first-child p+h1+p {
+.title h1+p {
+    position: absolute;
+    top: 50vh;
     text-align: center;
+    width: 100%;
     color: white;
     font-size: 1.5rem;
     font-weight: 300;
@@ -50,7 +56,7 @@ div.section:first-child p+h1+p {
     max-width: 100%;
 }
 
-div.section:first-child img {
+.title img {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -61,13 +67,13 @@ div.section:first-child img {
     background: white;
 }
 
-.section p img {
-    margin: 0 -4rem;
-    width: 100vw;
+.section.image {
+    padding: 0;
+    margin: 0;
 }
 
-.section img {
-    width: 100%;
+.section p img {
+    width: 100vw;
 }
 
 h3, h4 {
@@ -103,11 +109,11 @@ blockquote {
 
 @media (min-width:600px) {
 
-    div.section:first-child p+h1 {
+    .title h1 {
         font-size: 4.5rem;
     }
     
-    div.section:first-child p+h1+p {
+    .title h1+p {
         font-size: 2rem;
         font-weight: 300;
     }
@@ -128,4 +134,12 @@ blockquote {
         font-size: 1.2rem;
         line-height: 1.7;    
     }
+
+    @media (min-width:600px) {
+        .section {
+            width: 800px;
+            margin: auto;
+        }
+
+
 }

@@ -28,16 +28,32 @@
       var ani=new ScrollAnimation();
 
       window.onload = function() {
+          classify(".section:first-child", "title");
+          classify(".section p img", "section image", 2);
+          
           var animations=[
             {selector: ".section", animation:"eager-appear"},
-            {selector: ".section:nth-child(1n+2) img", animation:"wipe"}
+            {selector: ".section img", animation:"wipe"}
           ];
           ani.setup(animations);
           const repaint = () => {
               ani.update(window.scrollY)
               window.requestAnimationFrame(repaint)
           }
-          window.requestAnimationFrame(repaint)
+          window.requestAnimationFrame(repaint);
+      }
+
+      function classify(selector, classname, level) {
+        var elems=document.querySelectorAll(selector);
+        for (var i=0; i<elems.length; i++) {
+          var el=elems[i];
+          var l=level;
+          while (l) { 
+            el=el.parentNode;
+            l--;
+          }
+          el.className = classname;
+        }
       }
 
     </script>    
