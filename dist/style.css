@@ -58,6 +58,7 @@ div.section:first-child img {
 
 .section {
     padding: 1rem 2rem;
+    background: white;
 }
 
 .section p img {

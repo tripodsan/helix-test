@@ -23,6 +23,24 @@
     <title>${content.title}</title>
     <link rel="stylesheet" href="/dist/style.css"/>
     <script src="https://d6uhzlpot4xwe.cloudfront.net/runtime/1.21/themes/wiper-fonts.gz.js"></script>
+    <script src="/dist/js/ScrollAnimation.js"></script>
+    <script>
+      var ani=new ScrollAnimation();
+
+      window.onload = function() {
+          var animations=[
+            {selector: ".section", animation:"eager-appear"},
+            {selector: ".section:nth-child(1n+2) img", animation:"wipe"}
+          ];
+          ani.setup(animations);
+          const repaint = () => {
+              ani.update(window.scrollY)
+              window.requestAnimationFrame(repaint)
+          }
+          window.requestAnimationFrame(repaint)
+      }
+
+    </script>    
   </head>
 <body>
   <sly data-sly-list="${content.sections}">
