@@ -21,7 +21,15 @@
  * @param payload The current payload of processing pipeline
  * @param payload.content The content
  */
+
+var toHAST = require('mdast-util-to-hast');
+var toHTML = require('hast-util-to-html');
+
 function pre(payload) {
+  for (var i=0;i<payload.content.sections.length;i++) {
+    var sec=payload.content.sections[i];
+    sec.innerHTML = toHTML(toHAST(sec));
+  }
   payload.content.time = `${new Date()}`;
 }
 

@@ -22,13 +22,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="/dist/favicon.ico">
     <title>${content.title}</title>
     <link rel="stylesheet" href="/dist/style.css"/>
-</head>
+    <script src="https://d6uhzlpot4xwe.cloudfront.net/runtime/1.21/themes/wiper-fonts.gz.js"></script>
+  </head>
 <body>
-
-${content.document.body.innerHTML}
-
-<hr>
-<em>generated at ${content.time}</em>
+  <sly data-sly-list="${content.sections}">
+    <div class="section">
+      ${item.innerHTML}
+    </div>
+  </sly>
+<!-- generated at ${content.time} -->
 
 </body>
 </html>
