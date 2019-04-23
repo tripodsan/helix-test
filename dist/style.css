@@ -61,6 +61,7 @@ body {
 
 .title img {
     height: 100vh;
+    width: 100vw;
     object-fit: cover;
 }
 
@@ -74,7 +75,7 @@ body {
     margin: 0;
 }
 
-img {
+.image img {
     width: 100vw;
 }
 
@@ -128,6 +129,29 @@ blockquote {
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><text font-size='250' x='0' y='200' letter-spacing='-35px' fill='lightgrey'>\2018\2018</text></svg>");
 }
 
+pre {
+    background-color: lightgrey;
+    padding: 1em;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+code {
+    font-size: 1.1em;
+}
+
+h3 code {
+    font-size: 1em;
+    font-family: inherit;
+    background-color: lightgrey;
+}
+
+p code,li code {
+    background-color: lightgrey;
+    padding: 0 2px;
+}
+
+
 @media (min-width:600px) {
 
     h1 {
@@ -159,6 +183,7 @@ blockquote {
         font-size: 1.2rem;
         line-height: 1.7;    
     }
+
 }
 
 @media (min-width:900px) {

@@ -69,10 +69,10 @@ function pre(payload) {
   
   var document=payload.content.document;
   classify(document, "section", "copy");
-  classify(document, "section p img", "image", 2);
+  classify(document, "section>:first-child>img", "image", 2);
   
   /* header image? */
-  if (document.querySelector("section:first-child p img")) {
+  if (document.querySelector("section:first-child p:first-child>img")) {
     classify(document, "section:first-child", "title");
     wrap(document, "section:first-child :nth-child(1n+2)", "header");  
   }

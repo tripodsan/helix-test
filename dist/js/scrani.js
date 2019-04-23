@@ -6,7 +6,7 @@
             // config
             animations: [            
                 {selector: "section", animation:"eager-appear"},
-                {selector: "section img", animation:"wipe"}
+                {selector: "section>p>img", animation:"wipe"}
             ],
 
             scrollY: -1,
