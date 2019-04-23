@@ -26,12 +26,12 @@
             let progress=0.0;
             const offsetTop = el.getBoundingClientRect().top+window.pageYOffset;
 
-            if (this.scrollY > offsetTop) {
+            if (scrani.scrollY > offsetTop) {
                 progress=1.0;
-            } else if (this.scrollYBottom < offsetTop) {
+            } else if (scrani.scrollYBottom < offsetTop) {
                 progress=0.0;
             } else {
-                progress=1.0-(offsetTop - this.scrollY)/window.innerHeight;
+                progress=1.0-(offsetTop - scrani.scrollY)/window.innerHeight;
             }
 
             // HACK: manually specified animation
