@@ -21,6 +21,7 @@ body {
 
 .title {
     overflow: hidden;
+    background-color: black;
 }
 
 .title p:first-child {

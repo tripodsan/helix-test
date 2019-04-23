@@ -9,52 +9,13 @@
     <script src="https://d6uhzlpot4xwe.cloudfront.net/runtime/1.21/themes/wiper-fonts.gz.js"></script>
     <script src="/dist/js/scrani.js"></script>
     <script>
-
       window.onload = function() {
-          classify("section", "copy");
-          classify("section p img", "image", 2);
-          classify("section:first-child", "title");
-          wrap("section:first-child :nth-child(1n+2)", "header");
           scrani.onload();
-          }
-
-      function wrap(selector, classname) {
-        var elems=document.querySelectorAll(selector);
-        var div = document.createElement("div");
-        div.className=classname;
-        for (var i=0;i<elems.length;i++) {
-          var el=elems[i];
-          div.appendChild(el.cloneNode(true));
-          if (i==0) {
-            el.parentNode.removeChild(el);
-          } else {
-            el.parentNode.replaceChild(div, el);
-          }
-        }
-      }
-
-      function classify(selector, classname, level) {
-        var elems=document.querySelectorAll(selector);
-        for (var i=0; i<elems.length; i++) {
-          var el=elems[i];
-          var l=level;
-          while (l) { 
-            el=el.parentNode;
-            l--;
-          }
-          el.className = classname;
-        }
-      }
-
+          }     
     </script>    
   </head>
 <body>
-  <sly data-sly-list="${content.sections}">
-    <section>
-      ${item.innerHTML}
-    </section>
-  </sly>
-
+${content.document.body.innerHTML}
 <!-- generated at ${content.time} -->
 
 </body>
