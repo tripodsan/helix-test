@@ -15,18 +15,8 @@
           classify("section p img", "image", 2);
           classify("section:first-child", "title");
           wrap("section:first-child :nth-child(1n+2)", "header");
-          
-          var animations=[
-            {selector: "section", animation:"eager-appear"},
-            {selector: "section img", animation:"wipe"}
-          ];
-          scrani.setup(animations);
-          const repaint = () => {
-              scrani.update(window.scrollY)
-              window.requestAnimationFrame(repaint)
+          scrani.onload();
           }
-          window.requestAnimationFrame(repaint);
-      }
 
       function wrap(selector, classname) {
         var elems=document.querySelectorAll(selector);
@@ -64,6 +54,7 @@
       ${item.innerHTML}
     </section>
   </sly>
+
 <!-- generated at ${content.time} -->
 
 </body>
