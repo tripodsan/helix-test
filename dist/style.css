@@ -134,12 +134,11 @@ blockquote {
         font-size: 1.2rem;
         line-height: 1.7;    
     }
+}
 
-    @media (min-width:600px) {
-        .section {
-            width: 800px;
-            margin: auto;
-        }
-
-
+@media (min-width:900px) {
+    .section {
+        width: 800px;
+        margin: auto;
+    }
 }
