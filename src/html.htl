@@ -15,8 +15,6 @@
     </script>    
   </head>
 <body>
-${content.document.body.innerHTML}
-<!-- generated at ${content.time} -->
-
+  ${content.document.body.innerHTML}
 </body>
 </html>

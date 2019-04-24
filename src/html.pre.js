@@ -72,8 +72,6 @@ function pre(payload) {
     classify(document, "section:first-child", "title");
     wrap(document, "section:first-child :nth-child(1n+2)", "header");
   }
-
-  payload.content.time = `${new Date()}`;
 }
 
 module.exports.pre = pre;
