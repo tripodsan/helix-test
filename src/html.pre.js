@@ -29,39 +29,36 @@ function wrap(document, selector, classname) {
   const elems = document.querySelectorAll(selector);
   const div = document.createElement("div");
   div.className = classname;
-  for (let i = 0; i < elems.length; i++) {
-    const el = elems[i];
+  elems.forEach((el, index) => {
     div.appendChild(el.cloneNode(true));
-    if (i == 0) {
+    if (index == 0) {
       el.parentNode.removeChild(el);
     } else {
       el.parentNode.replaceChild(div, el);
     }
-  }
+  });
 }
 
 function classify(document, selector, classname, level) {
   const elems = document.querySelectorAll(selector);
-  for (let i = 0; i < elems.length; i++) {
-    let el = elems[i];
+  elems.forEach((el) => {
     let l = level;
     while (l) {
       el = el.parentNode;
       l--;
     }
     el.className = classname;
-  }
+  });
 }
 
 function pre(payload) {
   let doc = "";
 
   /* workaround until sections in document are fixed */
-  for (let i = 0; i < payload.content.sections.length; i++) {
-    const sec = payload.content.sections[i];
+  payload.content.sections.forEach((sec) => {
     sec.innerHTML = toHTML(toHAST(sec));
     doc += "<section>" + sec.innerHTML + "</section>";
-  }
+  });
 
   /* shouldn't have to go through body? */
   payload.content.document.body.innerHTML = doc;
