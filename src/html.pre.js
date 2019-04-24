@@ -22,63 +22,61 @@
  * @param payload.content The content
  */
 
-var toHAST = require('mdast-util-to-hast');
-var toHTML = require('hast-util-to-html');
+const toHAST = require('mdast-util-to-hast');
+const toHTML = require('hast-util-to-html');
 
 function wrap(document, selector, classname) {
-  var elems=document.querySelectorAll(selector);
-  var div = document.createElement("div");
-  div.className=classname;
-  for (var i=0;i<elems.length;i++) {
-    var el=elems[i];
+  const elems = document.querySelectorAll(selector);
+  const div = document.createElement("div");
+  div.className = classname;
+  for (let i = 0; i < elems.length; i++) {
+    const el = elems[i];
     div.appendChild(el.cloneNode(true));
-    if (i==0) {
+    if (i == 0) {
       el.parentNode.removeChild(el);
     } else {
       el.parentNode.replaceChild(div, el);
     }
   }
 }
-  
+
 function classify(document, selector, classname, level) {
-  var elems=document.querySelectorAll(selector);
-  for (var i=0; i<elems.length; i++) {
-    var el=elems[i];
-    var l=level;
-    while (l) { 
-      el=el.parentNode;
+  const elems = document.querySelectorAll(selector);
+  for (let i = 0; i < elems.length; i++) {
+    let el = elems[i];
+    let l = level;
+    while (l) {
+      el = el.parentNode;
       l--;
     }
     el.className = classname;
   }
 }
-  
 
 function pre(payload) {
-  var doc="";
+  let doc = "";
 
   /* workaround until sections in document are fixed */
-  for (var i=0;i<payload.content.sections.length;i++) {
-    var sec=payload.content.sections[i];
+  for (let i = 0; i < payload.content.sections.length; i++) {
+    const sec = payload.content.sections[i];
     sec.innerHTML = toHTML(toHAST(sec));
-    doc+="<section>"+sec.innerHTML+"</section>";
+    doc += "<section>" + sec.innerHTML + "</section>";
   }
 
   /* shouldn't have to go through body? */
   payload.content.document.body.innerHTML = doc;
-  
-  var document=payload.content.document;
+
+  const document = payload.content.document;
   classify(document, "section", "copy");
   classify(document, "section>:first-child>img", "image", 2);
-  
+
   /* header image? */
   if (document.querySelector("section:first-child p:first-child>img")) {
     classify(document, "section:first-child", "title");
-    wrap(document, "section:first-child :nth-child(1n+2)", "header");  
+    wrap(document, "section:first-child :nth-child(1n+2)", "header");
   }
 
   payload.content.time = `${new Date()}`;
 }
-
 
 module.exports.pre = pre;
