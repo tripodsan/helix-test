@@ -21,6 +21,7 @@ body {
 
 .title {
     overflow: hidden;
+    background-color: black;
 }
 
 .title p:first-child {
@@ -31,56 +32,77 @@ body {
 }
 
 .title h1 {
-    position: absolute;
-    top: 30vh;
-    width: 100%;
-    display: block;
     color: white;
     text-align: center;
-    font-weight: 700;
-    font-size: 2.6rem;
-    line-height: 1.15;
-    font-family: "museo-slab",serif;
     text-shadow: 0px 0px 6px #000000;
+    margin-bottom: 0.1em;
 }
 
 .title h1+p {
-    position: absolute;
-    top: 50vh;
+    margin-top: 0.1em;
     text-align: center;
-    width: 100%;
     color: white;
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 1.1em;
-    max-width: 100%;
+}
+
+.header {
+    position: absolute;
+    height: 100vh;
+    width: 90vw;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 5%;
 }
 
 .title img {
-    width: 100vw;
     height: 100vh;
+    width: 100vw;
     object-fit: cover;
 }
 
-.section {
+.copy {
     padding: 1rem 2rem;
     background: white;
 }
 
-.section.image {
+.image {
     padding: 0;
     margin: 0;
 }
 
-.section p img {
+.image img {
     width: 100vw;
+}
+
+
+h1, h2, h3, h4, h5 {
+    font-family: "museo-slab",serif;
 }
 
 h3, h4 {
     font-weight: 400;
-    font-family: "museo-slab",serif;
     line-height: 1.25;
 }
+
+h1, h2 {
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: 2.6rem;
+}
+
+h2 {
+    font-size: 2.0rem;
+}
+
+
 h3 {
     font-size: 1.75rem;
 }
@@ -107,15 +129,42 @@ blockquote {
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><text font-size='250' x='0' y='200' letter-spacing='-35px' fill='lightgrey'>\2018\2018</text></svg>");
 }
 
+pre {
+    background-color: lightgrey;
+    padding: 1em;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+code {
+    font-size: 1.1em;
+}
+
+h3 code {
+    font-size: 1em;
+    font-family: inherit;
+    background-color: lightgrey;
+}
+
+p code,li code {
+    background-color: lightgrey;
+    padding: 0 2px;
+}
+
+
 @media (min-width:600px) {
 
-    .title h1 {
+    h1 {
         font-size: 4.5rem;
     }
     
     .title h1+p {
         font-size: 2rem;
         font-weight: 300;
+    }
+
+    h2 {
+        font-size: 3.5rem;
     }
 
     h3 {
@@ -134,10 +183,11 @@ blockquote {
         font-size: 1.2rem;
         line-height: 1.7;    
     }
+
 }
 
 @media (min-width:900px) {
-    .section {
+    .copy {
         width: 800px;
         margin: auto;
     }

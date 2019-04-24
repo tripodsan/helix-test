@@ -1,20 +1,4 @@
 <!DOCTYPE html>
-<!--
-  ~ Licensed to the Apache Software Foundation (ASF) under one or more
-  ~ contributor license agreements.  See the NOTICE file distributed with
-  ~ this work for additional information regarding copyright ownership.
-  ~ The ASF licenses this file to You under the Apache License, Version 2.0
-  ~ (the "License"); you may not use this file except in compliance with
-  ~ the License.  You may obtain a copy of the License at
-  ~
-  ~      http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -23,48 +7,14 @@
     <title>${content.title}</title>
     <link rel="stylesheet" href="/dist/style.css"/>
     <script src="https://d6uhzlpot4xwe.cloudfront.net/runtime/1.21/themes/wiper-fonts.gz.js"></script>
-    <script src="/dist/js/ScrollAnimation.js"></script>
+    <script src="/dist/js/scrani.js"></script>
     <script>
-      var ani=new ScrollAnimation();
-
       window.onload = function() {
-          classify(".section:first-child", "title");
-          classify(".section p img", "section image", 2);
-          
-          var animations=[
-            {selector: ".section", animation:"eager-appear"},
-            {selector: ".section img", animation:"wipe"}
-          ];
-          ani.setup(animations);
-          const repaint = () => {
-              ani.update(window.scrollY)
-              window.requestAnimationFrame(repaint)
-          }
-          window.requestAnimationFrame(repaint);
-      }
-
-      function classify(selector, classname, level) {
-        var elems=document.querySelectorAll(selector);
-        for (var i=0; i<elems.length; i++) {
-          var el=elems[i];
-          var l=level;
-          while (l) { 
-            el=el.parentNode;
-            l--;
-          }
-          el.className = classname;
-        }
-      }
-
+          scrani.onload();
+          }     
     </script>    
   </head>
 <body>
-  <sly data-sly-list="${content.sections}">
-    <div class="section">
-      ${item.innerHTML}
-    </div>
-  </sly>
-<!-- generated at ${content.time} -->
-
+  ${content.document.body.innerHTML}
 </body>
 </html>
