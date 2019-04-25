@@ -151,6 +151,23 @@ p code,li code {
     padding: 0 2px;
 }
 
+table th, table td {
+    border: 1px solid #dfe2e5;
+    padding: 6px 13px;
+}
+
+table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+table th {
+    font-weight: 600;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;    
+}
 
 @media (min-width:600px) {
 
