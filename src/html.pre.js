@@ -28,7 +28,7 @@ const toHTML = require('hast-util-to-html');
 function wrapNodes (newparent, elems) {
   elems.forEach((el, index) => {
     newparent.appendChild(el.cloneNode(true));
-    if (index == 0) {
+    if (index !== 0) {
       el.parentNode.removeChild(el);
     } else {
       el.parentNode.replaceChild(newparent, el);
