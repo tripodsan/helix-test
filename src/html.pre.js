@@ -59,33 +59,6 @@ function pre(payload) {
 
   const document = payload.content.document;
 
-  /* workaround until sections in document are fixed */
-  let currentCollection = [];
-  let sections=[]
-
-  /* prepare wrapping */
-  document.body.childNodes.forEach((child)=>{
-    if (child.tagName == "HR") {
-      sections.push(currentCollection);
-      currentCollection = [];
-    } else {
-      currentCollection.push(child);
-    }
-  });
-
-  sections.push(currentCollection);
-
-  /* replace sections */
-  sections.forEach((el) => {
-    wrapNodes(document.createElement("section"), el);
-  })
-
-  /* remove HRs */
-  document.querySelectorAll("body>hr").forEach((el)=>{ el.parentNode.removeChild(el) });
-  
-
- 
-
   classify(document, "section", "copy");
   classify(document, "section>:first-child>img", "image", 2);
 

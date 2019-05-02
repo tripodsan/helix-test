@@ -9,7 +9,8 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-body {
+
+ body {
     padding: 0;
     margin: 0;
     background-color: white;
@@ -65,9 +66,8 @@ body {
     object-fit: cover;
 }
 
-.copy {
+.copy, footer section {
     padding: 1rem 2rem;
-    background: white;
 }
 
 .image {
@@ -169,6 +169,82 @@ table {
     border-spacing: 0;    
 }
 
+header {
+    position: fixed;
+    background-color: black;
+    color: white;
+    z-index: 1;
+    overflow: hidden;
+    padding: 10px 20px;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+
+header img {
+    height: 1em;
+    padding-right: 5px;
+    padding-left: 2
+}
+
+header p {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0;
+    display: inline-block;
+    line-height: 1.5em;
+}
+
+header p:nth-child(2) {
+    display: block;
+    float: right;
+}
+
+header p:nth-child(2) a {
+    display: inline-block;
+}
+
+header a:any-link{
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+header section:nth-child(2) {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #222222;
+    padding: 10px 20px;
+    box-sizing: border-box;
+
+}
+
+header section:nth-child(2)>p {
+    display: block;
+    float: right;
+    font-size: 1.8em;
+    margin-top: -3px;
+}
+
+header section:nth-child(2) ul {
+    font-size: 2em;
+    list-style: none;
+}
+
+footer {
+    background-color: #cccccc;
+    padding: 20px 0px;
+    font-size: 0.5em;
+    color: #888888;
+    text-align: center;
+}
+
+
 @media (min-width:600px) {
 
     h1 {
@@ -204,8 +280,9 @@ table {
 }
 
 @media (min-width:900px) {
-    .copy {
+    .copy, footer section {
         width: 800px;
         margin: auto;
     }
+
 }
