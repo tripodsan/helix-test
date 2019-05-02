@@ -1,6 +1,6 @@
 ![](imgs/victor-larracuente-476156-unsplash.jpg "")
 
-# Project Helix Team
+# Project Helix Team for Wade
 
 Sign-up and Join the Team
  
