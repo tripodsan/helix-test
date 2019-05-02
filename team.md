@@ -63,3 +63,106 @@ Well designed, beautiful output.
 
 
 ---
+
+![](imgs/fabian-grohs-597395-unsplash.jpg "")
+
+---
+
+### Top 6 from our Project Manifesto
+
+#### Open Meritocracy
+We will work as meritocracy, input from others, and reviewing PRs and contributing to other projects is a top priority.
+
+#### Open Source
+If we don't have a good reason why something should be private, it should be public. All new repos, live on public github.
+
+#### Diversity
+We are a diverse team in every respect.
+
+#### No Meetings
+Get-togethers and hackathons only.
+
+#### More code, less blah, blah
+Code wins. Everybody codes. Commits.
+
+#### Beautiful Creations
+Well designed, beautiful output.
+
+---
+
+![](imgs/fabian-grohs-597395-unsplash.jpg "")
+
+---
+
+### Top 6 from our Project Manifesto
+
+#### Open Meritocracy
+We will work as meritocracy, input from others, and reviewing PRs and contributing to other projects is a top priority.
+
+#### Open Source
+If we don't have a good reason why something should be private, it should be public. All new repos, live on public github.
+
+#### Diversity
+We are a diverse team in every respect.
+
+#### No Meetings
+Get-togethers and hackathons only.
+
+#### More code, less blah, blah
+Code wins. Everybody codes. Commits.
+
+#### Beautiful Creations
+Well designed, beautiful output.
+
+---
+
+![](imgs/fabian-grohs-597395-unsplash.jpg "")
+
+---
+
+### Top 6 from our Project Manifesto
+
+#### Open Meritocracy
+We will work as meritocracy, input from others, and reviewing PRs and contributing to other projects is a top priority.
+
+#### Open Source
+If we don't have a good reason why something should be private, it should be public. All new repos, live on public github.
+
+#### Diversity
+We are a diverse team in every respect.
+
+#### No Meetings
+Get-togethers and hackathons only.
+
+#### More code, less blah, blah
+Code wins. Everybody codes. Commits.
+
+#### Beautiful Creations
+Well designed, beautiful output.
+
+---
+
+![](imgs/fabian-grohs-597395-unsplash.jpg "")
+
+---
+
+### Top 6 from our Project Manifesto
+
+#### Open Meritocracy
+We will work as meritocracy, input from others, and reviewing PRs and contributing to other projects is a top priority.
+
+#### Open Source
+If we don't have a good reason why something should be private, it should be public. All new repos, live on public github.
+
+#### Diversity
+We are a diverse team in every respect.
+
+#### No Meetings
+Get-togethers and hackathons only.
+
+#### More code, less blah, blah
+Code wins. Everybody codes. Commits.
+
+#### Beautiful Creations
+Well designed, beautiful output.
+
