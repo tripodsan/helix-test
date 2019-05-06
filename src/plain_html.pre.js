@@ -34,24 +34,6 @@ function wrapNodes (newparent, elems) {
   });
 }
 
-function wrap(document, selector, classname) {
-  const elems = document.querySelectorAll(selector);
-  const div = document.createElement("div");
-  div.className = classname;
-  wrapNodes(div, elems);
-}
-
-function classify(document, selector, classname, level) {
-  const elems = document.querySelectorAll(selector);
-  elems.forEach((el) => {
-    let l = level;
-    while (l) {
-      el = el.parentNode;
-      l--;
-    }
-    el.className = classname;
-  });
-}
 
 function pre(payload) {
 
@@ -70,7 +52,7 @@ function pre(payload) {
        currentCollection.push(child);
      }
    });
-
+   
    sections.push(currentCollection);
    sections.forEach((el) => {
      wrapNodes(document.createElement("section"), el);
@@ -79,15 +61,6 @@ function pre(payload) {
 
    /* end of workaround */
 
-
-  classify(document, "section", "copy");
-  classify(document, "section>:first-child>img", "image", 2);
-
-  /* header image? */
-  if (document.querySelector("section:first-child p:first-child>img")) {
-    classify(document, "section:first-child", "title");
-    wrap(document, "section:first-child :nth-child(1n+2)", "header");
-  }
 }
 
 module.exports.pre = pre;
