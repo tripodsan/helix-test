@@ -1,1 +1,1 @@
-Copyright &copy; 2018 Adobe Systems Incorporated. All rights reserved.   /   [Privacy](https://www.adobe.com/privacy.html)   /   [Terms of Use](https://www.adobe.com/legal/terms.html)   /   [Cookies](https://www.adobe.com/privacy/cookies.html)
+Copyright &copy; 2019 Adobe Systems Incorporated. All rights reserved.   /   [Privacy](https://www.adobe.com/privacy.html)   /   [Terms of Use](https://www.adobe.com/legal/terms.html)   /   [Cookies](https://www.adobe.com/privacy/cookies.html)
