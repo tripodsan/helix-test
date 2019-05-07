@@ -41,24 +41,29 @@ function pre(payload) {
 
 
    /* workaround until sections in document are fixed via PR on pipeline */
+   
+   
    let currentCollection = [];
    let sections=[]
  
-   document.body.childNodes.forEach((child)=>{
-     if (child.tagName == "HR") {
-       sections.push(currentCollection);
-       currentCollection = [];
-     } else {
-       currentCollection.push(child);
-     }
-   });
+   if (document.querySelector("body>hr")) {
+    document.body.childNodes.forEach((child)=>{
+      if (child.tagName == "HR") {
+        sections.push(currentCollection);
+        currentCollection = [];
+      } else {
+        currentCollection.push(child);
+      }
+    });
+    
+    sections.push(currentCollection);
+    sections.forEach((el) => {
+      wrapNodes(document.createElement("section"), el);
+    })
+ 
+    document.querySelectorAll("body>hr").forEach((el)=>{ el.parentNode.removeChild(el) }); 
+   }
    
-   sections.push(currentCollection);
-   sections.forEach((el) => {
-     wrapNodes(document.createElement("section"), el);
-   })
-   document.querySelectorAll("body>hr").forEach((el)=>{ el.parentNode.removeChild(el) });
-
    /* end of workaround */
 
 }
