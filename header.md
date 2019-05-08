@@ -6,6 +6,6 @@
 
 [&times;](#)
 - [Home](/)
-- [Hackathon] (/5-bsl.html)
-- [Join the Team] (/team.html)
-- [Pipeline] (/pipeline.html)
+- [Hackathon](/5-bsl.md)
+- [Join the Team](/team.md)
+- [Pipeline](/pipeline.md)
