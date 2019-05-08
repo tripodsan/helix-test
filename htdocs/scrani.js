@@ -5,8 +5,8 @@
             
             // config
             animations: [            
-                {selector: "body>section", animation:"eager-appear"},
-                {selector: "body>section>p>img", animation:"wipe"}
+                {selector: "body>.section", animation:"eager-appear"},
+                {selector: "body>.section>p>img", animation:"wipe"}
             ],
 
             scrollY: -1,
@@ -46,7 +46,7 @@
 
             if (animation == "wipe") {
                 const right=Math.round(100-progress*100);
-                el.style=`clip-path: inset(0 ${right}% 0 0)`;
+                el.style=`clip-path: inset(0 ${right}% 0 0); -webkit-clip-path: inset(0 ${right}% 0 0)`;
             }
         }
 

@@ -211,7 +211,7 @@ header a:any-link{
     font-weight: 100;
 }
 
-header section:nth-child(2) {
+header .section:nth-child(2) {
     display: none;
     position: fixed;
     width: 100vw;
@@ -224,14 +224,14 @@ header section:nth-child(2) {
 
 }
 
-header section:nth-child(2)>p {
+header .section:nth-child(2)>p {
     display: block;
     float: right;
     font-size: 1.8em;
     margin-top: -3px;
 }
 
-header section:nth-child(2) ul {
+header .section:nth-child(2) ul {
     font-size: 2em;
     list-style: none;
 }
@@ -280,7 +280,7 @@ footer {
 }
 
 @media (min-width:900px) {
-    .copy, footer section {
+    .copy, footer .section {
         width: 800px;
         margin: auto;
     }

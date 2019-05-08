@@ -58,45 +58,41 @@ function pre(payload) {
   const document = payload.content.document;
 
 
-     /* workaround until sections in document are fixed via PR on pipeline */
+      /* workaround until sections in document are fixed via PR on pipeline */
    
-   
-     let currentCollection = [];
-     let sections=[]
-   
-     if (document.querySelector("body>hr")) {
-      document.body.childNodes.forEach((child)=>{
-        if (child.tagName == "HR") {
-          sections.push(currentCollection);
-          currentCollection = [];
-        } else {
-          currentCollection.push(child);
-        }
-      });
+    
+      let currentCollection = [];
+      let sections=[]
+    
+       document.body.childNodes.forEach((child)=>{
+         if (child.tagName == "HR") {
+           sections.push(currentCollection);
+           currentCollection = [];
+         } else {
+           currentCollection.push(child);
+         }
+       });
+       
+ 
+       sections.push(currentCollection);
+       sections.forEach((el) => {
+         const newparent=document.createElement("div");
+         newparent.className='section';
+         wrapNodes(newparent, el);
+       })
+    
+       document.querySelectorAll("body>hr").forEach((el)=>{ el.parentNode.removeChild(el) }); 
       
-      sections.push(currentCollection);
-      sections.forEach((el) => {
-        wrapNodes(document.createElement("section"), el);
-      })
-   
-      document.querySelectorAll("body>hr").forEach((el)=>{ el.parentNode.removeChild(el) }); 
-     }
-     
-     /* end of workaround */
-  
+      /* end of workaround */  
 
-
-  if (!document.querySelector("section")) {
-    wrap(document, "body>*", "copy");
-  }
   
-  classify(document, "section", "copy");
-  classify(document, "section>:first-child>img", "image", 2);
+  classify(document, "div.section", "section copy");
+  classify(document, "div.section>:first-child>img", "section image", 2);
 
   /* header image? */
-  if (document.querySelector("section:first-child p:first-child>img")) {
-    classify(document, "section:first-child", "title");
-    wrap(document, "section:first-child :nth-child(1n+2)", "header");
+  if (document.querySelector("div.section:first-child p:first-child>img")) {
+    classify(document, "div.section:first-child", "section title");
+    wrap(document, "div.section:first-child :nth-child(1n+2)", "header");
   }
 
 }

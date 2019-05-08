@@ -40,31 +40,32 @@ function pre(payload) {
   const document = payload.content.document;
 
 
-   /* workaround until sections in document are fixed via PR on pipeline */
+     /* workaround until sections in document are fixed via PR on pipeline */
    
-   
-   let currentCollection = [];
-   let sections=[]
- 
-   if (document.querySelector("body>hr")) {
-    document.body.childNodes.forEach((child)=>{
-      if (child.tagName == "HR") {
-        sections.push(currentCollection);
-        currentCollection = [];
-      } else {
-        currentCollection.push(child);
-      }
-    });
     
-    sections.push(currentCollection);
-    sections.forEach((el) => {
-      wrapNodes(document.createElement("section"), el);
-    })
- 
-    document.querySelectorAll("body>hr").forEach((el)=>{ el.parentNode.removeChild(el) }); 
-   }
+     let currentCollection = [];
+     let sections=[]
    
-   /* end of workaround */
+      document.body.childNodes.forEach((child)=>{
+        if (child.tagName == "HR") {
+          sections.push(currentCollection);
+          currentCollection = [];
+        } else {
+          currentCollection.push(child);
+        }
+      });
+      
+
+      sections.push(currentCollection);
+      sections.forEach((el) => {
+        const newparent=document.createElement("div");
+        newparent.setAttribute('class', 'section');
+        wrapNodes(newparent, el);
+      })
+   
+      document.querySelectorAll("body>hr").forEach((el)=>{ el.parentNode.removeChild(el) }); 
+     
+     /* end of workaround */
 
 }
 
