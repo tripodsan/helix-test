@@ -17,7 +17,7 @@ req.send();
 req.onload=function(){
     var html="";
     json=JSON.parse(req.responseText);
-    document.getElementById("md").innerHTML=json.md;
+    document.getElementById("md").innerHTML=json.body;
     window.setTimeout(fetchMd, 2000);
 };
 }
