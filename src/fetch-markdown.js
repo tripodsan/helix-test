@@ -39,13 +39,21 @@ async function fetch(context, secrets, logger, resourcePath) {
   logger.debug(`fetching Markdown from ${options.uri}`);
   try {
     const resp = await client(options);
-    logger.info(JSON.stringify(resp, null, 2));
+    // logger.info(JSON.stringify(resp, null, 2));
     if (resp.statusCode === 200) {
       content.body = resp.body;
+
+      // disable caching
+      const res = setdefault(context, 'response', {});
+      const head = setdefault(res, 'headers', {});
+      setdefault(head, 'Cache-Control', 'no-store, private, must-revalidate');
+
     } else {
-      const e = new Error('failed loading google docs');
-      e.statusCode = resp.statusCode || 500;
-      throw e;
+      logger.info('failed loading from google docs: ' + resp.statusCode);
+      return;
+      // const e = new Error('failed loading google docs');
+      // e.statusCode = resp.statusCode || 500;
+      // throw e;
     }
   } catch (e) {
     if (e.statusCode === 404) {

@@ -17,10 +17,12 @@ module.exports.pre = (context, action) => {
 
 module.exports.before = {
   fetch: async (context, { logger, request, secrets }) => {
-    logger.info(JSON.stringify(request, null, 2));
+    // logger.info(JSON.stringify(request, null, 2));
 
     const idx = request.params.path.lastIndexOf('.');
     const resourcePath = decodeURIComponent(request.params.path.substring(0, idx));
+
+    const oldRaw = secrets.REPO_RAW_ROOT;
 
     logger.info('resourcePath=' + resourcePath);
     secrets.REPO_RAW_ROOT = 'https://script.google.com/macros/s/AKfycbyJm5vcxgUcD_BL_HEaXOkYZ1jQGVsHeLkDjlAe31xEQ8P7-wq_/exec';
@@ -28,6 +30,7 @@ module.exports.before = {
 
     await fetch(context, secrets, logger, resourcePath);
 
+    secrets.REPO_RAW_ROOT = oldRaw;
 
     // fetch is constructing this url
     // ${rootPath}/${owner}/${repo}/${ref}/${path}
