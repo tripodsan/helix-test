@@ -55,8 +55,6 @@ function toHexString(byteArray) {
 }
 
 function saveInlineImage(image) {
-  var root = DriveApp.getRootFolder();
-  var helixContent = root.getFoldersByName("helix-content").next();
 
   var imageBlob=image.getBlob();
   var contentType = imageBlob.getContentType();
