@@ -9,7 +9,7 @@ definitions:
 
 strains:
   - name: default
-    code: *defaultRepo
-    content: *defaultRepo
+    code: ssh://git@github.com/davidnuescheler/helix-test.git#master
+    content: ssh://git@github.com/davidnuescheler/helix-test.git#master
     static: ssh://git@github.com/davidnuescheler/helix-test.git/htdocs#master
     package: tripod/github-com--davidnuescheler--helix-test--master-dirty

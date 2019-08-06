@@ -1,0 +1,25 @@
+{
+  "name": "david-helix-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "hlx deploy",
+    "publish": "hlx publish --custom-vcl='vcl/extensions.vcl' | cat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidnuescheler/helix-test.git"
+  },
+  "author": "",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/davidnuescheler/helix-test/issues"
+  },
+  "homepage": "https://github.com/davidnuescheler/helix-test#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}
