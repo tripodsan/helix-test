@@ -1,6 +1,6 @@
 function test() {
   try {
-    var md=toMarkdown("unsplashed");
+    var md=toMarkdown("reloader");
     // var md=toMarkdown("mytest/test");
     // var md = toMarkdown("Helix Hackathon Part V");
     Logger.log(md);
@@ -183,7 +183,8 @@ function toMarkdown(path) {
           case DocumentApp.ParagraphHeading.HEADING1: hpf+="#";
           default:
             if (hpf) {
-              md=hpf+" "+par.getText();
+              var text=par.getText();
+              if (text) md=hpf+" "+text;
             } else {
               md=processText(false, el.asText())+"\n";
             }
