@@ -1,5 +1,2 @@
 mountpoints:
-  /gdocs: "https://drive.google.com/drive/folders/1snjgJoqKO71T--uLIAsindAl82FuOtrR"
-  /mystuff: "https://drive.google.com/drive/u/1/folders/1I_FwT5qXkZTevAeZ9EqUqLaS0RbLFkI2"
-  /office: "https://adobe-my.sharepoint.com/personal/tripod_adobe_com/Documents/helix-content"
-  /david: "https://adobe-my.sharepoint.com/personal/uncled_adobe_com/Documents/helix-content"
+  /: "https://adobe.sharepoint.com/sites/cg-helix/Shared%20Documents"
