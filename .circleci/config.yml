@@ -47,8 +47,8 @@ jobs:
             command: npx hlx deploy | cat
 
         - run:
-            name: Activate CDN
-            command: npx hlx publish | cat
+              name: Publish to Fastly
+              command: npx hlx publish --custom-vcl='vcl/extensions.vcl' | cat
 
         - run:
             name: Test Performance
