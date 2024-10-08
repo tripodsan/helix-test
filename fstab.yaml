@@ -1,0 +1,14 @@
+mountpoints:
+  /:
+    url: "https://adobe.sharepoint.com/sites/cg-helix/Shared%20Documents"
+
+folders:
+  # generate everything on and below /products with the indicated content
+  /products: /generic-product
+
+  # generate everything below /articles/ from /special/default-article
+  /articles/: /special/default-article
+
+  # use the given html from the code-bus for everything on and below /app
+  /app: /spa/index.html
+

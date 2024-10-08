@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: verdana;
+            font-size: 20px;
+            line-height: 2rem;
+        }
+    </style>
+</head>
+<body>
+<h1 id="title"></h1>
+<ul id="list">
+</ul>
+
+<script>
+  const ipsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'.split(/[., ]+/);
+
+  const [t1, t0] = window.location.pathname.split('/').reverse();
+  document.getElementById('title').innerText = `${t0} / ${t1}`;
+
+  const word = () => ipsum[Math.floor(Math.random() * ipsum.length)];
+
+  for (let i = 0; i < 10; i++) {
+    const li = document.createElement('li');
+    const item = `/${word()}/${word()}`;
+    li.innerHTML = `<a href="/app${item}${window.location.search}">${item}</a>`;
+    document.getElementById('list').appendChild(li);
+  }
+</script>
+
+</body>
+</html>
